@@ -1,0 +1,11 @@
+[project]
+name        = "musik4lyfe"
+description = "Music database and social media platform."
+version     = "1.0.0"
+author      = "Jacob Moore"
+
+[database]
+user        = "admin"
+password    = "sLn8Ux6D3yyhLRD"
+host        = "musik4lyfe.ccrghmeibfyn.us-east-2.rds.amazonaws.com"
+database    = "musik4lyfe"
