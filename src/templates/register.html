@@ -1,0 +1,23 @@
+<html>
+    <head>
+    <div class='title'><h1>User Registration</h1></div>
+    </head>
+    <body>
+        <div class='row mt-5'>
+            <div class='col-4 mx-auto'>
+            <h4 class='text-center'>Fill in account information here:</h4><hr>
+            <form action="{{ url_for('register') }}" method="post" autocomplete="off">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+
+				<input type="submit" value="Register">
+			</form>
+        </div>
+    </body>
+</html>

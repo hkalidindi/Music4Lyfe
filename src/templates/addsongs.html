@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Album - Musik4Lyfe</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="\src\static\style.css">
+  </head>
+  <body>
+    <header>
+    <div class="wrapper">
+      <div class="logo">
+        <img src="\src\resources\images\logo.jpg" width="500" height="300" alt="Musik4Lyfe Logo" title="Musik4Lyfe">
+      </div>
+    </div>
+    <ul class="nav-area">
+      <li><a href="/homepage">Home</a></li>
+      <li><a href="/album">Albums</a></li>
+      <li><a href="/songs">Songs</a></li>
+      <li><a href="/artists">Artists</a></li>
+      <li><a href="/add songs"><b>Add Songs</b></a></li>
+      <li><a href="/index">Logout</a></li>
+    </ul>
+
+    {% from "form_helpers.html" import render_field %}
+        <form method="post">
+        <dl>
+            {{ render_field(form.select) }}
+            <p>
+            {{ render_field(form.search) }}
+            </p>
+        </dl>
+            <p>
+                <input type="submit" value="Search">
+            </p>
+        </form>
+      <div class="welcome-text">
+        <h1>Add Music to Database</h1>
+          <form>
+              Song:
+              <input type='text' name='song' size='20'></br></br>
+              Artist:
+              <input type='text' name='artist' size='20'></br></br>
+              Album:
+              <input type='text' name='album' size='20'></br></br>
+              <input type="submit" class="btn" value="Add Song">
+          </form>
+      </div>
+    </header>
+  </body>
+</html>

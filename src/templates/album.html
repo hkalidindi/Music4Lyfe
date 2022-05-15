@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Album - Musik4Lyfe</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="\src\static\style.css">  
+  </head>
+  <body>
+    <header>
+    <div class="wrapper">
+      <div class="logo">
+        <img src="\src\resources\images\logo.jpg" width="500" height="300" alt="Musik4Lyfe Logo" title="Musik4Lyfe">
+      </div>
+    </div>
+    <ul class="nav-area">
+      <li><a href="/homepage">Home</a></li>
+      <li><a href="/album"><b>Albums</b></a></li>
+      <li><a href="/songs">Songs</a></li>
+      <li><a href="/artists">Artists</a></li>
+      <li><a href="/add songs">Add Songs</a></li>
+      <li><a href="/index">Logout</a></li>
+    </ul>
+
+    {% from "form_helpers.html" import render_field %}
+        <form method="post">
+        <dl>
+            {{ render_field(form.select) }}
+            <p>
+            {{ render_field(form.search) }}
+            </p>
+        </dl>
+            <p>
+                <input type="submit" value="Search">
+            </p>
+        </form>
+      <div class="welcome-text">
+        <h1>All Albums</h1>
+        <table border='3' style="width:100%">
+            <tr>
+                <th>Album Name</th>
+                <th>Artist</th>
+                <th>Number of Songs
+            </tr>
+            {% for album_name,artist_name, album_id, song_count, artist_id in album_data %}
+            <tr>
+                <th><a href="albumview/{{album_name}}/{{album_id}}">{{album_name}}</a></th>
+                <th><a href="artistview/{{artist_name}}/{{artist_id}}">{{artist_name}}</a></th>
+                <th>{{song_count}}</th> 
+            </tr>
+            {% endfor %}
+        </table>
+      </div>
+    </header>
+  </body>
+</html>
